@@ -24,21 +24,21 @@ body {
 #cursor {
   height: 20px;
   width: 20px;
-  background-color: rgb(149, 193, 30);
+  background-color: #be9010;
   border-radius: 50%;
   position: fixed;
   z-index: 99;
 }
 
 #cursor-blur {
-  height: 400px;
-  width: 400px;
-  background-color: #96c11e46;
+  height: 300px;
+  width: 300px;
+  background-color: #4b5d705d;
   /* background-color: red; */
   border-radius: 50%;
   position: fixed;
   z-index: 9;
-  filter: blur(100px);
+  filter: blur(70px);
 }
 
 #cursor,
@@ -60,7 +60,7 @@ body {
 }
 
 #nav img {
-  width: 90px;
+  width: 7rem;
 }
 
 #nav h4 {
@@ -75,7 +75,7 @@ body {
 }
 
 #nav.scrolled h4:hover {
-  color: #aadd22;
+  color: #be9010;
 }
 
 video {
@@ -84,11 +84,12 @@ video {
   object-fit: cover;
   z-index: -2;
   position: fixed;
+  filter: grayscale(100%);
 }
 
 #main {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.324);
+  background-color: #0000007a;
 }
 
 #page1 {
@@ -104,18 +105,19 @@ video {
 }
 
 #page1 h1 {
-  font-size: 90px;
+  font-size: 85px;
   font-weight: 900;
   position: relative;
+  text-transform: uppercase;
 }
 
 #page1 h1::before {
-  content: "EAT. DRINK. PLAY.";
+  content: "Shaping Skylines.";
   position: absolute;
-  color: #000;
-  top: -4px;
-  left: -4px;
-  -webkit-text-stroke: 1px rgb(171, 234, 11);
+  color: transparent;
+  top: -2.5px;
+  left: -2.5px;
+  -webkit-text-stroke: 1px #be9010;
   z-index: -1;
 }
 
@@ -125,12 +127,13 @@ video {
   margin-top: 10px;
   margin-bottom: 20px;
   z-index: 10;
+  text-transform: uppercase;
 }
 
 #page1 p {
   font-size: 20px;
   font-weight: 400;
-  width: 50%;
+  width: 60%;
 }
 
 #page2 {
@@ -152,7 +155,8 @@ video {
 }
 
 #scroller h4:hover {
-  color: rgb(150, 193, 37);
+  color: #be9010;
+  -webkit-text-stroke: 1.5px #be9010;
 }
 
 #scroller h4 {
@@ -162,7 +166,7 @@ video {
   margin-right: 10px;
   transition: all linear 0.3s;
   font-family: "Gilroy";
-  -webkit-text-stroke: 1.5px rgb(150, 193, 37);
+  -webkit-text-stroke: 1.5px #be9010;
   text-transform: uppercase;
   color: transparent;
 }
@@ -185,6 +189,14 @@ video {
   }
 }
 
+#line1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 1.5px;
+  width: 100%;
+  background-color: #be9010;
+}
+
 #about-us {
   height: 50vh;
   width: 100%;
@@ -203,6 +215,7 @@ video {
   width: 140px;
   border-radius: 5px;
   object-fit: cover;
+  filter: grayscale(100%);
 }
 
 #golf-img {
@@ -210,6 +223,7 @@ video {
   width: 140px;
   border-radius: 5px;
   object-fit: cover;
+  filter: grayscale(100%);
 }
 
 #about-us-in {
@@ -223,15 +237,19 @@ video {
 #about-us-in p {
   font-size: 1.1rem;
   line-height: 32px;
+  color: #102e50;
+  font-weight: 450;
 }
 
 #about-us-in h3 {
+  font-family: gilroy;
   font-size: 38px;
   text-transform: uppercase;
   font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px #102e50;
 }
 #card-container {
-  /* background-color: red; */
   height: 90vh;
   display: flex;
   align-items: center;
@@ -244,7 +262,6 @@ video {
 .card {
   height: 83%;
   width: 25%;
-  /* background-color: blue; */
   border-radius: 3%;
   background-size: cover;
   background-position: center;
@@ -252,29 +269,46 @@ video {
   transition: all ease 0.6s;
   z-index: 10;
   cursor: pointer;
+  position: relative;
 }
 
-#card1 {
+/* Add grayscale image as a pseudo-element */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  z-index: -2;
+}
+
+/* Assign images to ::before instead of .card */
+#card1::before {
   background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
 
-#card2 {
+#card2::before {
   background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
-#card3 {
+
+#card3::before {
   background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
 
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgb(149, 193, 30);
+  background-color: #c4930c;
   padding: 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   opacity: 0;
   transition: all ease 0.6s;
+  z-index: 1;
+  position: relative;
 }
 
 .overlay h4 {
@@ -294,10 +328,6 @@ video {
   opacity: 1;
 }
 
-/* .overlay > * {
-  pointer-events: auto;
-} */
-
 .card:hover {
   transform: scale(95%);
 }
@@ -309,17 +339,34 @@ video {
   justify-content: space-between;
   /* background-color: red; */
   padding: 5px;
-  background: linear-gradient(to left bottom, #25a536, #aadd22);
+  /* background: #000000f6; */
+  z-index: 10;
+  position: relative;
+}
+
+#green-div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom left,
+    #fff,
+    #4b5d70
+  ); /* your background */
+  z-index: -1; /* Send it behind the content */
 }
 
 #green-div h4 {
   width: 45%;
   font-size: 23px;
-  font-weight: 1000;
+  font-weight: 850;
   line-height: 40px;
   text-align: center;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 #green-div img {
@@ -327,6 +374,7 @@ video {
   object-fit: cover;
   width: 13%;
   opacity: 30%;
+  /* filter: blur(3px); */
 }
 
 #first-img {
@@ -413,8 +461,15 @@ video {
   gap: 10px;
   padding-left: 65%;
 }
+
+#diagonal-text svg {
+  fill: #be9010;
+  scale: 125%;
+}
+
 #diagonal-text h3 {
   font-weight: 1000;
+  color: #be9010;
 }
 /* 
 #test {
@@ -424,11 +479,12 @@ video {
 #quote-text {
   height: 80vh;
   width: 100%;
-  background-color: #000;
+  color: #102e50;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 10;
 }
 
 #quote-text > p {
@@ -438,6 +494,7 @@ video {
   line-height: 40px;
   text-align: center;
   text-transform: uppercase;
+  color: #102e50;
 }
 
 #quote-text img {
@@ -453,6 +510,7 @@ video {
 #quote-text #colon2 {
   right: 15%;
   bottom: 20%;
+  rotate: 180deg;
 }
 
 #page4 {
@@ -476,10 +534,10 @@ video {
 }
 
 .elem h2 {
-  color: #000;
+  color: #fff;
   height: 100%;
   width: 100%;
-  background-color: #aadd22;
+  background-color: #be9010;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,9 +573,9 @@ video {
   position: absolute;
   text-transform: uppercase;
   top: 2.5%;
-  color: #000;
+  color: #fff;
   font-family: gilroy;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1.5px #4b5d70;
   z-index: 9;
 }
 
@@ -528,8 +586,9 @@ video {
 #footer {
   height: 50vh;
   width: 100%;
-  background: linear-gradient(to bottom left, #2ca53c, #afe716);
+  background: linear-gradient(to bottom right, #fff, #4b5d70);
   position: relative;
+  z-index: 10;
 }
 
 #footer img {
@@ -549,12 +608,12 @@ video {
 }
 
 #instagram {
-  fill: #000;
+  fill: #102e50;
   scale: 200%;
 }
 
 #facebook {
-  fill: #000;
+  fill: #102e50;
   scale: 200%;
 }
 
@@ -567,7 +626,9 @@ video {
 }
 
 #images img {
+  scale: 230%;
   height: 7rem;
+  object-fit: cover;
 }
 
 #icon {
@@ -599,7 +660,7 @@ video {
 }
 
 #text3 p {
-  color: #000;
+  color: #102e50;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1.5rem;
@@ -609,7 +670,7 @@ video {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 800;
-  color: #000;
+  color: #102e50;
   padding-top: 2px;
   cursor: pointer;
   transition: all ease 0.3s;
@@ -623,7 +684,7 @@ video {
 #text2 h3 {
   font-weight: 800;
   font-size: 1.5rem;
-  color: #000;
+  color: #102e50;
   transition: all ease 0.3s;
   cursor: pointer;
 }
@@ -646,7 +707,7 @@ video {
 }
 
 #bottom-elem p {
-  color: #000;
+  color: #102e50;
   font-size: 0.8rem;
   font-weight: 500;
 }

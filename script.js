@@ -64,7 +64,7 @@ window.addEventListener("mouseover", (e) => {
       duration: 0.5,
       width: 20,
       height: 20,
-      backgroundColor: "rgb(149, 193, 30)",
+      backgroundColor: "#be9010",
       border: "none",
       ease: "power3.out",
     });
@@ -82,7 +82,11 @@ window.addEventListener("mouseover", (e) => {
 //   });
 // });
 gsap.to("#nav", {
-  backgroundColor: "#000",
+  // backgroundColor: "#102E50",
+  // filter: "blur(10px)",
+  background: "#102e50b9", // semi-transparent dark blue
+  backdropFilter: "blur(10px)",
+  webkitBackdropFilter: "blur(10px)",
   duration: 0.5,
   height: "100px",
   scrollTrigger: {
@@ -102,13 +106,13 @@ gsap.to("#nav", {
 });
 
 gsap.to("#main", {
-  backgroundColor: "#000",
+  backgroundColor: "#efefef",
   scrollTrigger: {
     trigger: "#main",
     scroller: "body",
     // markers: true,
-    start: "top -25%",
-    end: "top -70%",
+    start: "top -15%",
+    end: "top -50%",
     scrub: 2,
   },
 });
@@ -169,11 +173,13 @@ let lasttext = document.querySelector("#lasttext");
 
 elem.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
-    lasttext.style.webkitTextStroke = "1px #aadd22";
+    lasttext.style.webkitTextStroke = "1.5px #be9010";
+    lasttext.style.color = "#fff";
   });
 
   elem.addEventListener("mouseleave", () => {
-    lasttext.style.webkitTextStroke = "1px #fff";
+    lasttext.style.webkitTextStroke = "1.5px #4b5d70";
+    lasttext.style.color = "#fff";
   });
 });
 
